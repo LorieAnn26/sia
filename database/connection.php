@@ -13,4 +13,6 @@
 		$error_message = $e->getMessage();
 	}
 
+	$GLOBALS['conn'] = $conn;
+
 ?>

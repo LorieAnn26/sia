@@ -19,7 +19,7 @@ div.loginHeader{
 }
 div.loginHeader h1{
 	font-size: 100px;
-	color:#f685a2;
+	color:#5094dc;
 	padding:0px;
 	margin:0px;
 }
@@ -35,7 +35,7 @@ div.loginHeader p:after{
 	content:'';
 	display: block;
 	height: 5px;
-	background: #f685a2;
+	background: #5094dc;
 	margin:0 auto;
 }
 
@@ -78,7 +78,7 @@ div.loginButtonContainer{
 div.loginButtonContainer button{
 	font-size: 20px;
 	padding: 10px 40px;
-	background: #f685a2;
+	background: #5094dc;
 	border:none;
 	color: #fff;
 }
@@ -86,7 +86,7 @@ div.loginButtonContainer button{
 
 div.header{
 	width:100%;
-	background: #f685a1;
+	background: #5094dc;
 	padding:10px 0px;
 	text-align: right;
 }
@@ -117,12 +117,12 @@ div.homepageContainer{
 }
 div.bannerHeader h1{
 	font-size: 100px;
-	color: #f685a1;	
+	color: #2e6da4;	
 	line-height: 100%;
 }
 div.bannerHeader p{
 	font-size: 40px;
-	color: #f685a1;	
+	color: #2e6da4;	
 	text-transform: uppercase;
 	line-height: 100%;
 }
@@ -151,7 +151,7 @@ div.bannerIcons a:first-child{
 div.bannerIcons a:hover{
 	color: #fff;
 	font-size: 25px;
-	background: #f685a1;
+	background: #5094dc;
 	transition: .5s all;
 }
 
@@ -175,7 +175,7 @@ div.homepageFeature span.featureIcon{
 	width:80px;
 	display: inline-block;
 	font-size:50px;
-	background: #f685a1;
+	background: #5094dc;
 	color:#fff;
 	padding-top: 5px;
 	border-radius: 50%;
@@ -235,7 +235,7 @@ div.formContainer button{
 	height: 100%;
 	font-size: 22px;
 	padding: 0px 10px;
-	background: #f685a1;
+	background: #5094dc;
 	border: none;
 	color: #fff;
 	border-top-right-radius: 15px;
@@ -311,7 +311,7 @@ div.dasboard_content_container{
 	background: #f4f6f9;
 }
 h3.dashboard_logo{
-	color:#f685a1;
+	color:#5094dc;
 	font-size: 80px;
 	text-align: center;
 }
@@ -325,7 +325,7 @@ div.dashboard_sidebar_user img{
 	width:80px;
 	display: inline-block;
 	border-radius: 50%;
-	border:2px solid #f685a1;
+	border:2px solid #5094dc;
 	margin-right:5px;
 	vertical-align: middle;
 }
@@ -358,12 +358,12 @@ ul.dashboard_menu_lists li.liMainMenu a i{
 	width:30px;
 }
 ul.dashboard_menu_lists li.menuActive{
-	background: #f685a1;
+	background: #5094dc;
 	color: #fff;
 }
 
 ul.dashboard_menu_lists li:hover{
-	background: #f685a1;
+	background: #5094dc;
 	color: #fff;
 	transition: 0.3s all;
 }
@@ -430,8 +430,8 @@ div#userAddFormContainer{
 	padding-top: 100px;
 }
 button.appBtn{
-    background: #f685a1;
-    border: 1px solid #f685a1;
+    background: #5094dc;
+    border: 1px solid #5094dc;
     color: #fff;
     padding: 10px;
     margin-top: 20px;
@@ -471,11 +471,11 @@ div.column-7{
 
 h1.section_header{
 	font-size: 21px;
-    color: #f685a1;
+    color: #5094dc;
     border-bottom: 1px solid #ffd7e1;
     padding-bottom: 11px;
     padding: 10px;
-    border-left: 4px solid #f690bf;
+    border-left: 4px solid #2a70ad;
     margin-bottom: 15px;
 }
 table, th, td{    
@@ -501,7 +501,7 @@ p.userCount{
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #f685a1;
+    color: #5094dc;
 }
 
 a.subMenuLink{	
@@ -518,7 +518,7 @@ a.subMenuLink i{
 }
 
 ul.subMenus{
-	background: #c26a80;
+	background: #2a70ad;
 	display: none;
 }
 
@@ -532,7 +532,7 @@ i.mainMenuIconArrow{
 	font-weight: bold;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
-    background: #763a49;
+    background: #1f537f;
 }
 
 .productTextAreaInput{
@@ -554,7 +554,7 @@ i.mainMenuIconArrow{
 }
 
 .orderProductBtn{
-    background: #d93f65;
+    background: #3f75d9;
     color: #fff;
 }
 .orderBtn{
@@ -643,7 +643,7 @@ div.orderProductRow{
 .poList p{	
     font-weight: bold;
     text-transform: uppercase;
-    color: #d55f7d;
+    color: #2e6da4;
     font-size: 16px;
 }
 
@@ -669,13 +669,13 @@ div.orderProductRow{
 }
 
 .updatePoBtn{
-	color: #f685a1;
+	color: #5094dc;
     background: #fff;
-    border: 1px solid #f685a1;
+    border: 1px solid #5094dc;
 }
 .updatePoBtn:hover{
 	color: #fff;
-    background:  #f685a1;
+    background:  #5094dc;
 }
 
 .po-badge{	
@@ -778,7 +778,7 @@ div.dashboard_content_main{
     width: 100%;
 }
 .reportType:hover{
-	background: #763a49;
+	background: #2b7bc2;
     color: #fff;
 }
 .reportExportBtn{
@@ -786,16 +786,16 @@ div.dashboard_content_main{
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    background: #f685a1;
+    background: #5094dc;
     color: white;
     margin-left: 13px;
     font-size: 11px;
 	border: 1px solid transparent;
 }
 .reportExportBtn:hover{
-	border: 1px solid #f685a1;
+	border: 1px solid #5094dc;
 	background: #fff;
-	color: #f685a1;
+	color: #5094dc;
 }
 .reportType p{
 	font-size: 20px;
@@ -870,9 +870,9 @@ td.bgGreen{
     border-bottom: 1px solid #f0f0f0;
 }
 .permissionActive{
-    background: #f685a1;
+    background: #5094dc;
     color: #fff;
-    border: 1px solid #de2855;
+    border: 1px solid #2852de;
     transition: 0.3s ;
 }
 
@@ -882,7 +882,7 @@ td.bgGreen{
     border-radius: 5px;
     width: 221px;
     padding-left: 10px;
-    color: #f685a1;
+    color: #5094dc;
     outline: 0;
     margin-right: 18px;	
 }
@@ -907,7 +907,7 @@ td.bgGreen{
     width: 92%;
 }
 #searchResults a{
-	color: #ec0a42;
+	color: #0a64ec;
     padding: 5px;
     display: inline-block;
     width:100%;
@@ -926,7 +926,7 @@ td.bgGreen{
 @media only screen and (max-width: 600px) {
 	.homepageContainer a.loginBtn{
 		background: #ffff !important;
-	    color: #f685a1 !important;
+	    color: #5094dc !important;
 	    border-radius: 4px !important;
 	}
 	.header{
@@ -987,3 +987,200 @@ td.bgGreen{
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
+
+/*POS Part*/
+div.column-5{
+    width: 40%;
+}
+div.column-7{
+    width: 60%;
+}
+
+.searchInputContainer input{
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding-left: 15px;
+    border: 1px solid #b4b0b0;
+    border-radius: 4px;
+    margin-top: 20px;
+
+}
+
+.searchResultContainer{
+    margin-top: 10px;
+    padding: 10px;
+
+}
+
+.productResultContainer{
+    padding: 2px;
+    border: 1px solid #e2e2e2;
+    position: relative;
+    overflow: hidden;
+}
+
+.productResultContainer img{
+    width: 100%;
+    transition: transform .2s;
+}
+
+.productInfoContainer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    font-size: 15px;
+    left: 0;
+    background: #084298a3;
+    height: 50px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.productInfoContainer .col-md-2{
+    margin-left: 30%;
+}
+
+.productResultContainer img:hover{
+    transform: scale(1.5);
+}
+
+.searchResultContainer .col-4{
+    padding: 0px !important;
+}
+
+.productResultContainer:hover{
+    cursor: pointer;
+}
+
+
+
+.posOrderContainer{
+    padding: 0px !important;
+    border-left: 3px solid #2e6da4;
+}
+
+.pos_header{
+    background: #5094dc;
+    text-align: center;
+    /*background: #5094dc;*/
+}
+
+.pos_header .logo{
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0px !important;
+}
+
+.pos_header .timeAndDate{
+    font-size: 15px;
+    margin: 0px !important;
+    color: #fff;
+    padding: 10px;
+}
+
+.alignRight{
+    text-align: right;
+}
+
+.setting a{
+    font-size: 30px;
+    margin-right: 13px;
+    color: #fff;
+}
+
+#pos_items_tbl th{
+    color: #6b6365;
+    font-size: 15px;
+}
+
+#pos_items_tbl td{
+    font-size: 13px;
+}
+
+.pos_items_container tbody tr:nth-child(odd){
+ background: #dbeafd !important;}
+
+.pos_item_btn{
+    color: #5094dc;
+}
+
+p.item_total{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 14px;
+}
+
+span.item_total--value{
+    float: right;
+    font-weight: bold;
+    color: #323232;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+span.item_total--label{
+    display: inline-block;
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+.checkoutBtnContainer{
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.checkoutBtn{
+    font-size: 25px;
+    text-align: center;    
+    display: block;
+    font-weight: bold;
+    text-decoration: none !important;
+    color: #2e6da4;
+    border: 2px solid #2e6da4;
+    border-radius: 5px;
+}
+
+.checkoutBtn:hover{
+    background: #2e6da4;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.item_total_container{
+    margin-top: 20px;
+}
+
+.dialogProductName{
+    font-size: 19px;
+    font-weight: bold;
+    color: #6a6a6a;
+}
+
+.floatRight{
+    float: right;
+}
+
+.itemNoData{
+    text-align: center;
+    font-size: 18px;
+    padding: 50px;
+    color: #707070;
+    text-transform: uppercase;
+}
+
+.quantityUpdateBtn_minus{
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ef0000 !important;
+}
+
+.quantityUpdateBtn_plus{
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #17b70e !important;
+}

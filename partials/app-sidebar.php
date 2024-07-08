@@ -15,13 +15,13 @@
 				<a href="./dashboard.php" ><i class="fa fa-dashboard"></i> <span class="menuText">Dashboard</span></a>
 			</li>			
 			<li class="liMainMenu">
-				<a href="./report.php" ><i class="fa fa-file"></i> <span class="menuText">Reports</span></a>
+				<a href="pos.php" ><i class="fa fa-dollar sign"></i> <span class="menuText">Point of Sale</span></a>
 			</li>			
 			<li class="liMainMenu">
 				<a href="javascript:void(0);" class="showHideSubMenu" >
 					<i class="fa fa-tag showHideSubMenu"></i> 
 					<span class="menuText showHideSubMenu" >Product</span>
-					<i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" ></i> 
+					<i class="fa fa-angle-down mainMenuIconArrow showHideSubMenu" ></i> 
 				</a>
 
 				<ul class="subMenus">
@@ -33,7 +33,7 @@
 				<a href="javascript:void(0);" class="showHideSubMenu" >
 					<i class="fa fa-truck showHideSubMenu"></i> 
 					<span class="menuText showHideSubMenu" >Supplier</span>
-					<i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" ></i> 
+					<i class="fa fa-angle-down mainMenuIconArrow showHideSubMenu" ></i> 
 				</a>
 
 				<ul class="subMenus">
@@ -45,7 +45,7 @@
 				<a href="javascript:void(0);" class="showHideSubMenu" >
 					<i class="fa fa-shopping-cart showHideSubMenu"></i> 
 					<span class="menuText showHideSubMenu" >Purchase Order</span>
-					<i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" ></i> 
+					<i class="fa fa-angle-down mainMenuIconArrow showHideSubMenu" ></i> 
 				</a>
 
 				<ul class="subMenus">
@@ -54,11 +54,15 @@
 				</ul>
 			</li>
 
+			<li class="liMainMenu">
+				<a href="./report.php" ><i class="fa fa-file"></i> <span class="menuText">Reports</span></a>
+			</li>
+
 			<li class="liMainMenu showHideSubMenu" >
 				<a href="javascript:void(0);" class="showHideSubMenu" >
 					<i class="fa fa-user-plus showHideSubMenu"></i> 
 					<span class="menuText showHideSubMenu" >User</span>
-					<i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" ></i> 
+					<i class="fa fa-angle-down mainMenuIconArrow showHideSubMenu" ></i> 
 				</a>
 
 				<ul class="subMenus">
@@ -71,7 +75,7 @@
 				<a href="javascript:void(0);" class="showHideSubMenu" >
 					<i class="fa fa-calendar showHideSubMenu"></i> 
 					<span class="menuText showHideSubMenu" >Schedule</span>
-					<i class="fa fa-angle-left mainMenuIconArrow showHideSubMenu" ></i> 
+					<i class="fa fa-angle-down mainMenuIconArrow showHideSubMenu" ></i> 
 				</a>
 
 				<ul class="subMenus">

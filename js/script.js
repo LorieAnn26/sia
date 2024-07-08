@@ -60,12 +60,12 @@ function showHideSubMenu(subMenu,mainMenuIcon){
 	if(subMenu != null){
 		if(subMenu.style.display === 'block') {
 			subMenu.style.display = 'none';
-			mainMenuIcon.classList.remove('fa-angle-down');
-			mainMenuIcon.classList.add('fa-angle-left');				
+			mainMenuIcon.classList.remove('fa-angle-up');
+			mainMenuIcon.classList.add('fa-angle-down');				
 		} else {
 			subMenu.style.display = 'block';
-			mainMenuIcon.classList.remove('fa-angle-left');
-			mainMenuIcon.classList.add('fa-angle-down');
+			mainMenuIcon.classList.remove('fa-angle-down');
+			mainMenuIcon.classList.add('fa-angle-up');
 		}
 	}
 }
@@ -83,7 +83,7 @@ let curNav = document.querySelector('a[href="./'+ curFile +'"]');
 curNav.classList.add('subMenuActive');
 
 let mainNav = curNav.closest('li.liMainMenu');
-mainNav.style.background = '#f685a1';
+mainNav.style.background = '#5094dc';
 
 let subMenu = curNav.closest('.subMenus');
 let mainMenuIcon = mainNav.querySelector('i.mainMenuIconArrow');
