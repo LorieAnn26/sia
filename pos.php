@@ -82,7 +82,27 @@
                                         <a href="javascript:void(0)"><i class="fa fa-gear"> </i></a>
                                     </div>
                                     <p class="logo">IMS</p>
-                                    <p class="timeAndDate">XXX XX, XXXX    XX:XX:XX XX</p>
+                                    <head>
+                                        <meta charset="UTF-8">
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Real Time Display</title>
+                                        <script>
+                                            function updateTime() {
+                                                const now = new Date();
+                                                const options = {
+                                                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                                                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                                                };
+                                                const formattedTime = now.toLocaleDateString('en-US', options);
+                                                document.getElementById('timeAndDate').innerHTML = formattedTime;
+                                            } 
+                                            window.onload = updateTime;
+                                            setInterval(updateTime, 1000);
+                                        </script>
+                                    </head>
+                                    <body>
+                                        <p id="timeAndDate" class="timeAndDate"></p>
+                                    </body>
                                 </div>
                                 <div class="pos_items_container">
                                     <div class="pos_items">
