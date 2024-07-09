@@ -1,7 +1,7 @@
 *,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],figure,blockquote,dl,dd{margin:0}body{min-height:100vh;scroll-behavior:smooth;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}img:not([alt]){filter:blur(10px)}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
 body#loginBody{
-	background: url('../images/login-background.jpg') no-repeat center center fixed;
+	background: url('../images/alt-background.png') no-repeat center center fixed;
 	background-size: cover;
 }
 body{	
@@ -24,7 +24,7 @@ div.loginHeader h1{
 	margin:0px;
 }
 div.loginHeader p{
-	color:#ffdae3;
+	color:#dae1ff;
 	font-size: 50px;
 	margin:0px;
 	text-transform: uppercase;
@@ -63,7 +63,7 @@ div.loginInputsContainer label{
 div.loginInputsContainer input{
 	height: 30px;
 	width:100%;
-	border:2px solid #d40339;
+	border:2px solid #2e6da4;
 	font-size:20px;
 	padding:5px;
 	text-align: center;
@@ -86,7 +86,7 @@ div.loginButtonContainer button{
 
 div.header{
 	width:100%;
-	background: #5094dc;
+	background: #2e6da4;
 	padding:10px 0px;
 	text-align: right;
 }
@@ -104,7 +104,7 @@ div.header a:hover{
 	border:2px solid #fff;
 }
 div.banner{
-	background: url('../images/banner.jpg') no-repeat center center fixed;
+	background: url('../images/home-banner.png') no-repeat center center fixed;
 	background-size: cover;
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -117,12 +117,13 @@ div.homepageContainer{
 }
 div.bannerHeader h1{
 	font-size: 100px;
-	color: #2e6da4;	
+	color: #5094dc;	
 	line-height: 100%;
+	padding-top: 20px;
 }
 div.bannerHeader p{
 	font-size: 40px;
-	color: #2e6da4;	
+	color: #5094dc;	
 	text-transform: uppercase;
 	line-height: 100%;
 }
@@ -990,10 +991,10 @@ td.bgGreen{
 
 /*POS Part*/
 div.column-5{
-    width: 40%;
+    width: 30%;
 }
 div.column-7{
-    width: 60%;
+    width: 70%;
 }
 
 .searchInputContainer input{
@@ -1021,7 +1022,7 @@ div.column-7{
 }
 
 .productResultContainer img{
-    width: 100%;
+    width: 270px;
     transition: transform .2s;
 }
 

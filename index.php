@@ -15,7 +15,7 @@
 	<div class="banner">
 		<div class="homepageContainer">
 			<div class="bannerHeader">				
-				<h1>IMS</h1>
+				<h1>LPG Tank</h1>
 				<p>Inventory Management System</p>
 			</div>
 			<p class="bannerTagline">

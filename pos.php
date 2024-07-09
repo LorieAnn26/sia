@@ -5,9 +5,6 @@
 
 	$user = $_SESSION['user'];
 
-    //include('product.php');
-    //$products = getProducts();
-
 ?>
 
 <!DOCTYPE html>
@@ -29,60 +26,55 @@
                                 <div class="searchInputContainer">
                                     <input type="text" placeholder="Search Product...">
                                 </div> 
-
-                                <!--< ?php foreach($products as $product){ ?>-->
-
                                 <div class="searchResultContainer">
                                     <div class="row">
-                                    <div class="col-4 productColContainer" data-pid="1">
+                                        <div class="col-4">
                                             <div class="productResultContainer">
-                                                <img src="images/sakto.png" class="productImage" alt="">
-                                                <div class="productInfoContainer">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <p class="productName">1.5kg Sakto</p>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <p class="productPrice"> P155.00</p>
-                                                        </div>
+                                            <img src="images\sakto.png" alt="">
+                                            <div class="productInfoContainer">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <p class="productName">1.5kg Sakto</p>
                                                     </div>
-                                                </div>  
+                                                    <div class="col-md-4">
+                                                        <p class="productPrice">P155.00</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             </div>
                                         </div>
-                                        <div class="col-4 productColContainer" data-pid="2">
+                                        <div class="col-4">
                                             <div class="productResultContainer">
-                                                <img src="images/11kg.png" class="productImage" alt="">
-                                                <div class="productInfoContainer">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <p class="productName">11kg Cylinder</p>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <p class="productPrice"> P1016.00</p>
-                                                        </div>
+                                            <img src="images\11kg.png" alt="">
+                                            <div class="productInfoContainer">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <p class="productName">11kg Cylinder</p>
                                                     </div>
-                                                </div>  
+                                                    <div class="col-md-4">
+                                                        <p class="productPrice">P1016.00</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             </div>
                                         </div>
-                                        <div class="col-4 productColContainer" data-pid="3">
+                                        <div class="col-4">
                                             <div class="productResultContainer">
-                                                <img src="images/50kg.png" class="productImage" alt="">
-                                                <div class="productInfoContainer">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <p class="productName">50kg Cylinder</p>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <p class="productPrice"> P1200.00</p>
-                                                        </div>
+                                            <img src="images\50kg.png" alt="">
+                                            <div class="productInfoContainer">
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <p class="productName">50kg Cylinder</p>
                                                     </div>
-                                                </div>  
+                                                    <div class="col-md-4">
+                                                        <p class="productPrice">P1200.00</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             </div>
                                         </div>
-                                    </div>  
+                                    </div>
                                 </div> 
-                                <!--< ?php    }
-                                ?>-->
                             </div>
                             <div class="column column-5 posOrderContainer">
                                 <div class="pos_header">
@@ -107,11 +99,11 @@
                                     <a href="javascript:void(0)" class="checkoutBtn">CHECKOUT</a>
                                 </div>
                             </div>
-                        </div>
+                    </div>
 			</div>
 		</div>
 	</div>
-        <script src="js/pos_script.js?v=<?= time() ?>"> </script>
-        <?php include('partials/app-scripts.php'); ?>
+        <script src="js\pos_script.js?v=<?= time() ?>"> </script>
+        <?php include('partials\app-scripts.php'); ?>
 </body>
 </html>

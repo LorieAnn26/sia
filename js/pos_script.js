@@ -4,7 +4,6 @@ let pos_script = function(){
     this.totalOrderAmount = 0.00;
 
     this.products = products;
-
     this.showClock = function(){
         let dateObj = new Date;
         let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
