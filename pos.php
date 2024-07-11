@@ -1,5 +1,4 @@
 <?php
-	// Start the session.
 	session_start();
 	if(!isset($_SESSION['user'])) header('location: login.php');
 
@@ -31,8 +30,6 @@
                                 </div> 
                                 <div class="searchResultContainer">
                                     <div class="row">
-<!--ung gumagana kanina d pa connected sa db-->
-<!--ito connected na,, tignan mo mangyayare pag nirefresh-->
                                     <?php foreach($products as $product){ ?>
                                         <div class="col-4 productColContainer" data-pid="<?= $product['id'] ?>">
                                             <div class="productResultContainer">

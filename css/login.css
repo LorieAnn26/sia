@@ -463,10 +463,10 @@ div.column{
 	padding:0px 10px;
 }
 div.column-5{
-	width: 41.67%;
+	width: 45%;
 }
 div.column-7{
-	width: 58.33%;
+	width: 55%;
 }
 
 
@@ -1102,7 +1102,8 @@ div.column-7{
 }
 
 .pos_items_container tbody tr:nth-child(odd){
- background: #dbeafd !important;}
+ background: #dbeafd !important;
+}
 
 .pos_item_btn{
     color: #5094dc;
@@ -1184,4 +1185,79 @@ span.item_total--label{
     font-size: 12px;
     font-weight: bold;
     color: #17b70e !important;
+}
+
+.checkoutDialog .modal-dialog{
+	max-width: 919px !important;
+	width: 100%;
+}
+
+.checkoutTotalAmountContainer{
+	text-align: center;
+}
+
+.checkout_amt{
+	font-size: 36px;
+	font-weight: bold;
+	color: #ff5858;
+}
+
+.checkout_amt_title{
+	display: block;
+	font-size: 17px;
+	color: #7e7e7e;
+}
+
+.checkoutTblHeader{
+	font-size: 17px;
+	color: #888888;
+	font-weight: bold;
+	text-align: center;
+}
+
+.checkoutTblContent{
+	font-size: 16px;
+	color: #08113b;
+	font-weight: bold;
+	text-align: center;
+}
+
+.checkoutTblContentContainer{
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.checkoutTblContentContainer:nth-child(odd){
+	background: #dbeafd !important;
+}
+
+.checkoutTblHeaderContainer{
+	margin-bottom: 10px;
+}
+
+.checkoutTblHeaderContainer_title{
+	font-size: 20px;
+	color: #323232;
+	font-weight: bold;
+}
+
+#userAmt{
+	height: 45px;
+	font-size: 20px;
+	text-align: right;
+}
+
+.checkoutUserChangeContainer{
+	margin-top: 25px;
+	text-align: right;
+}
+
+.checkoutUserChange{
+	color: #68a068;
+	font-size: 22px;
+}
+
+.checkoutUserChange small{
+	color: #7e7e7e;
+	font-size: 15px;
 }

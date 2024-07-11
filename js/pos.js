@@ -140,6 +140,63 @@ let pos_script = function(){
                 }
 
             }
+
+            if(targetElClassList.contains('checkoutBtn')){
+                if(Object.keys(loadScript.orderItems).length){
+
+                    let orderItemsHtml = '';
+                    let counter = 1;
+                    let totalAmt = 0.00;
+                    for (const [pid, orderItems] of Object.entries(loadScript.orderItems)){
+                        orderItemsHtml += '\
+                            <div class="row checkoutTblContentContainer">\
+                                <div class="col-md-2 checkoutTblContent">'+ counter +'</div>\
+                                <div class="col-md-4 checkoutTblContent">'+ orderItems['name'] +'</div>\
+                                <div class="col-md-3 checkoutTblContent">'+ loadScript.addCommas(orderItems['orderQty']) +'</div>\
+                                <div class="col-md-3 checkoutTblContent">P'+ loadScript.addCommas(orderItems['amount'].toFixed(2)) +'</div>\
+                            </div>';
+                        totalAmt += orderItems['amount'];
+                        counter++;
+                    }
+
+                    let content = '\
+                    <div class="row">\
+                        <div class="col-md-7">\
+                        <p class="checkoutTblHeaderContainer_title">Items</p>\
+                            <div class="row checkoutTblHeaderContainer">\
+                                <div class="col-md-2 checkoutTblHeader">#</div>\
+                                <div class="col-md-4 checkoutTblHeader">Product Name</div>\
+                                <div class="col-md-3 checkoutTblHeader">Order Qty</div>\
+                                <div class="col-md-3 checkoutTblHeader">Amount</div>\
+                            </div>'+ orderItemsHtml +'\
+                        </div>\
+                        <div class="col-md-5">\
+                            <div class="checkoutTotalAmountContainer">\
+                                <span class="checkout_amt">P'+ loadScript.addCommas(totalAmt.toFixed(2)) +'</span> <br/>\
+                                <span class="checkout_amt_title">TOTAL AMOUNT</span>\
+                            </div>\
+                            <hr/>\
+                            <div class="checkoutUserAmt">\
+                                <input class="form-control" id="userAmt" type="text" placeholder="Enter amount..."/>\
+                            </div>\
+                            <div class="checkoutUserChangeContainer">\
+                                <p class="checkoutUserChange"><small>CHANGE: </small>P0.00</p>\
+                            </div>\
+                        </div>\
+                    </div>';
+
+                    console.log(loadScript.orderItems);
+
+                    BootstrapDialog.confirm({
+                        type: BootstrapDialog.TYPE_INFO,
+                        title: '<strong>CHECKOUT</strong>',
+                        cssClass: 'checkoutDialog',
+                        message: content,
+                        btnOKLabel: 'Checkout'
+                    })
+                }
+            }
+
         });
     }
 
