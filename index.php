@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>IMS Homepage - Inventory Management System</title>
+	<title>LPG Homepage</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css?v=<?= time() ?>">
 	<script src="https://use.fontawesome.com/0c7a3095b5.js"></script>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -15,11 +15,11 @@
 	<div class="banner">
 		<div class="homepageContainer">
 			<div class="bannerHeader">				
-				<h1>LPG Tank</h1>
-				<p>Inventory Management System</p>
+				<h1>LPG</h1>
+				<p>Locate Propane Goods</p>
 			</div>
 			<p class="bannerTagline">
-				Track your goods throughout your entire supply chain, from purchasing to production to end sales
+				Track your LPG Tanks throughout your entire supply chain, from purchasing to production to end sales
 			</p>
 			<div class="bannerIcons">
 				<a href=""><i class="fa fa-apple"></i></a>
@@ -61,7 +61,7 @@
 					</form>
 				</div>
 				<div class="video">
-					<iframe src="https://www.youtube.com/embed/48VkVOHYGWw" frameborder="0"></iframe>
+					<iframe src=" " frameborder="0"></iframe>
 				</div>
 			</div>
 		</div>

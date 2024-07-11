@@ -3,7 +3,7 @@
 ?>
 
 <div class="dashboard_sidebar" id="dashboard_sidebar">
-	<h3 class="dashboard_logo" id="dashboard_logo">IMS</h3>
+	<h3 class="dashboard_logo" id="dashboard_logo">LPG</h3>
 	<div class="dashboard_sidebar_user">
 		<img src="images/user/sample.jpg" alt="User image." id="userImage" />
 		<span><?= $user['first_name'] . ' ' . $user['last_name'] ?></span>

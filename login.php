@@ -51,7 +51,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>IMS Login - Inventory Management System</title>
+	<title>LPG Login</title>
 
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
@@ -63,8 +63,8 @@
 	<?php } ?>
 	<div class="container">
 		<div class="loginHeader">
-			<h1>IMS</h1>
-			<p>Inventory Management System</p>
+			<h1>LPG</h1>
+			<p>Locate Propane Goods</p>
 		</div>
 		<div class="loginBody">
 			<form action="login.php" method="POST">

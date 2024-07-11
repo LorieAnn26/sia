@@ -5,6 +5,9 @@
 
 	$user = $_SESSION['user'];
 
+    include('product.php');
+    $products = getProducts($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,51 +31,25 @@
                                 </div> 
                                 <div class="searchResultContainer">
                                     <div class="row">
-                                        <div class="col-4">
+<!--ung gumagana kanina d pa connected sa db-->
+<!--ito connected na,, tignan mo mangyayare pag nirefresh-->
+                                    <?php foreach($products as $product){ ?>
+                                        <div class="col-4 productColContainer" data-pid="<?= $product['id'] ?>">
                                             <div class="productResultContainer">
-                                            <img src="images\sakto.png" alt="">
+                                            <img src="uploads\products\<?= $product['img'] ?>" class="productImage" alt="">
                                             <div class="productInfoContainer">
                                                 <div class="row">
                                                     <div class="col-md-8">
-                                                        <p class="productName">1.5kg Sakto</p>
+                                                        <p class="productName"><?= $product['product_name'] ?></p>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <p class="productPrice">P155.00</p>
+                                                        <p class="productPrice">P<?= $product['price'] ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             </div>
                                         </div>
-                                        <div class="col-4">
-                                            <div class="productResultContainer">
-                                            <img src="images\11kg.png" alt="">
-                                            <div class="productInfoContainer">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <p class="productName">11kg Cylinder</p>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <p class="productPrice">P1016.00</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="productResultContainer">
-                                            <img src="images\50kg.png" alt="">
-                                            <div class="productInfoContainer">
-                                                <div class="row">
-                                                    <div class="col-md-8">
-                                                        <p class="productName">50kg Cylinder</p>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <p class="productPrice">P1200.00</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
                                     </div>
                                 </div> 
                             </div>
@@ -81,28 +58,8 @@
                                     <div class="setting alignRight">
                                         <a href="javascript:void(0)"><i class="fa fa-gear"> </i></a>
                                     </div>
-                                    <p class="logo">IMS</p>
-                                    <head>
-                                        <meta charset="UTF-8">
-                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                        <title>Real Time Display</title>
-                                        <script>
-                                            function updateTime() {
-                                                const now = new Date();
-                                                const options = {
-                                                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-                                                    hour: '2-digit', minute: '2-digit', second: '2-digit'
-                                                };
-                                                const formattedTime = now.toLocaleDateString('en-US', options);
-                                                document.getElementById('timeAndDate').innerHTML = formattedTime;
-                                            } 
-                                            window.onload = updateTime;
-                                            setInterval(updateTime, 1000);
-                                        </script>
-                                    </head>
-                                    <body>
-                                        <p id="timeAndDate" class="timeAndDate"></p>
-                                    </body>
+                                    <p class="logo">LPG</p>
+                                    <p class="timeAndDate">XXX XX, XXXX    XX:XX:XX XX</p>
                                 </div>
                                 <div class="pos_items_container">
                                     <div class="pos_items">
@@ -118,14 +75,29 @@
                                 <div class="checkoutBtnContainer">
                                     <a href="javascript:void(0)" class="checkoutBtn">CHECKOUT</a>
                                 </div>
-                            </div>
                     </div>
+                </div>
 			</div>
 		</div>
 	</div>
-        <script src="js\pos_script.js?v=<?= time() ?>"> </script>
-        <?php include('partials\app-scripts.php'); ?>
+    
+    <script>
+            let productsJson = <?= json_encode($products) ?>;
+            var products = {};
+
+            productsJson.forEach((product) =>{
+                products[product.id] = {
+                    name: product.product_name,
+                    stock: product.stock,
+                    price: product.price
+                }
+            });
+
+            console.log(products);
+
+        </script>
+
+<script src="js\pos.js?v=<?= time() ?>"> </script>
+<?php include('partials\app-scripts.php'); ?>
 </body>
 </html>
-
-pull mo ulet
