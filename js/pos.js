@@ -5,6 +5,8 @@ let pos_script = function(){
 
     this.products = products;
 
+    this.userChange = -1;
+
 
     this.showClock = function(){
         let dateObj = new Date;
@@ -180,7 +182,7 @@ let pos_script = function(){
                                 <input class="form-control" id="userAmt" type="text" placeholder="Enter amount..."/>\
                             </div>\
                             <div class="checkoutUserChangeContainer">\
-                                <p class="checkoutUserChange"><small>CHANGE: </small>P0.00</p>\
+                                <p class="checkoutUserChange"><small>CHANGE: </small><span class="changeAmt"> ₱ 0.00 </span></p>\
                             </div>\
                         </div>\
                     </div>';
@@ -192,12 +194,44 @@ let pos_script = function(){
                         title: '<strong>CHECKOUT</strong>',
                         cssClass: 'checkoutDialog',
                         message: content,
-                        btnOKLabel: 'Checkout'
-                    })
+                        btnOKLabel: 'Checkout',
+                        callback: function(checkout){
+                            if (checkout){
+                                if(loadScript.userChange < 0){
+                                    loadScript.dialogError('Please input correct amount');
+                                    return a;
+                                } else{
+                                    $.post('product.php?action=checkout', {data: loadScript.orderItems}, function(response){
+
+
+                                    }, 'json');
+                                }
+
+                            }
+                        }
+                    });
                 }
             }
 
         });
+
+            document.addEventListener('keyup', function(e){
+                let targetEl = e.target;
+                let targetElClassList = targetEl.classList;
+
+                if(targetEl.id === 'userAmt'){
+                    let userAmt =  targetEl.value == '' ? 0 : parseFloat(targetEl.value);
+                    let change = userAmt - loadScript.totalOrderAmount;
+                    loadScript.userChange = change;
+
+                    document.querySelector('.checkoutUserChange .changeAmt')
+                        .innerHTML = loadScript.addCommas(change.toFixed(2));
+                    let el = document.querySelector('.checkoutUserChange');
+                        if(change < 0)el.classList.add('text-danger');
+                        else el.classList.remove('text-danger');
+                }
+
+            })
     }
 
     this.updateOrderItemTable = function(){
