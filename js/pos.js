@@ -1,13 +1,16 @@
 let pos_script = function(){
 
     this.orderItems = {};
-    this.totalOrderAmount = 0.00;
 
-    this.products = products;
+    this.totalOrderAmount = 0.00;
 
     this.userChange = -1;
 
+    this.tenderedAmt = 0;
 
+
+
+    this.products = products;
     this.showClock = function(){
         let dateObj = new Date;
         let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -184,8 +187,27 @@ let pos_script = function(){
                             <div class="checkoutUserChangeContainer">\
                                 <p class="checkoutUserChange"><small>CHANGE: </small><span class="changeAmt"> ₱ 0.00 </span></p>\
                             </div>\
-                        </div>\
-                    </div>';
+                            <hr/>\
+                                <div class="checkoutCustomer">\
+                                    <h4>Customer Details</h4>\
+                                        <div class = "form-group">\
+                                            <label for="fName">First Name</labe>\
+                                            <input type="text" id="fName" placeholder="Enter first name..." class="form-control" />\
+                                        </div>\
+                                        <div class = "form-group">\
+                                            <label for="lName">Last  Name</labe>\
+                                            <input type="text" id="lName" placeholder="Enter last name..." class="form-control" />\
+                                        </div>\
+                                        <div class = "form-group">\
+                                            <label for="address">Address</labe>\
+                                            <input type="text" id="address" placeholder="Enter address..." class="form-control" />\
+                                        </div>\
+                                        <div class = "form-group">\
+                                            <label for="contact">Contact</labe>\
+                                            <input type="text" id="contact" placeholder="Enter contact..." class="form-control" />\
+                                        </div>\
+                                    </div>\
+                                </div>';
 
                     console.log(loadScript.orderItems);
 
@@ -201,9 +223,30 @@ let pos_script = function(){
                                     loadScript.dialogError('Please input correct amount');
                                     return a;
                                 } else{
-                                    $.post('product.php?action=checkout', {data: loadScript.orderItems}, function(response){
+                                    $.post('product.php?action=checkout', {
+                                        data: loadScript.orderItems,
+                                        totalAmt: loadScript.totalOrderAmount,
+                                        change: loadScript.userChange,
+                                        tenderedAmt: loadScript.tenderedAmt,
+                                        customer: {
+                                            firstName: document.getElementById('fName').value,
+                                           lastName: document.getElementById('lName').value,
+                                           contact: document.getElementById('contact').value,
+                                           address: document.getElementById('address').value  
+                                        }
+                                    }, function(response){
+                                            let type = response.success ? BootstrapDialog.TYPE_SUCCESS : BootstrapDialog.TYPE_DANGER;
 
-
+                                            BootstrapDialog.alert({
+                                                type: type,
+                                                title: response.success ? 'Success' : 'Error',
+                                                message: response.message,
+                                                callback: function(isOk){
+                                                    if(response.success == true){
+                                                        loadScript.resetData(response);
+                                                    }
+                                                }
+                                            });
                                     }, 'json');
                                 }
 
@@ -221,6 +264,7 @@ let pos_script = function(){
 
                 if(targetEl.id === 'userAmt'){
                     let userAmt =  targetEl.value == '' ? 0 : parseFloat(targetEl.value);
+                    loadScript.tenderedAmt = userAmt;
                     let change = userAmt - loadScript.totalOrderAmount;
                     loadScript.userChange = change;
 
@@ -233,6 +277,31 @@ let pos_script = function(){
 
             })
     }
+
+    this.resetData = function(response){
+            let productsJson = response.products;
+            loadScript.products = {};
+
+            productsJson.forEach((product) =>{
+                loadScript.products[product.id] = {
+                    name: product.product_name,
+                    stock: product.stock,
+                    price: product.price
+                }
+            });
+
+            loadScript.orderItems = {};
+
+            loadScript.totalOrderAmount = 0.00;
+
+            loadScript.userChange = -1;
+
+            loadScript.tenderedAmt = 0;
+
+            loadScript.updateOrderItemTable();
+
+    }
+
 
     this.updateOrderItemTable = function(){
         loadScript.totalOrderAmount = 0.00;
