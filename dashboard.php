@@ -28,6 +28,72 @@
 		<div class="dasboard_content_container" id="dasboard_content_container">
 			<?php include('partials/app-topnav.php') ?>
 			<div class="dashboard_content">
+					<div class ="row widgetMainRow">
+						<div class ="col-4">
+							<div class ="widgetContainer widgetSale">
+								<p class ="widgetValue"> $32,000.00 </p>
+								<p class ="widgetHeader"> Sale Amount </p>
+                            </div>
+						</div> 
+                       <div class ="col-4">
+					  		<div class ="widgetContainer widgetQtySold">
+								<p class ="widgetValue"> 473 </p>
+								<p class ="widgetHeader"> Tanks Sold </p>
+                            </div>						
+						</div> 
+						<div class ="col-4">
+							<div class ="widgetContainer widgetOrder">
+								<p class ="widgetValue"> 85 </p>
+								<p class ="widgetHeader"> Total Orders </p>
+                            </div>						
+						</div> 
+					</div>
+					<div class ="row widgetSubRow">
+						<div class="col-md-4 widgetSecond">
+							<p class="header">Last 5 Orders</p>
+							<table class="table">
+								<tr>
+									<th>Order #</th>
+									<th>Total Amount</th>
+									<th>Date</th>
+								</tr>
+								<tr>
+									<td>54</td>
+									<td>P8,454.00</td>
+									<td>July 13, 2024 10:22 PM</td>
+								</tr>
+								<tr>
+									<td>71</td>
+									<td>P456.00</td>
+									<td>July 13, 2024 10:22 PM</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>P6,686.00</td>
+									<td>July 13, 2024 10:22 PM</td>
+								</tr>
+								<tr>
+									<td>67</td>
+									<td>P535.00</td>
+									<td>July 13, 2024 10:22 PM</td>
+								</tr>
+								<tr>
+									<td>81</td>
+									<td>P4,293.00</td>
+									<td>July 13, 2024 10:22 PM</td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-md-8 widgetSecond">
+							<p class="header">Daily Sales</p>
+							<figure class="highcharts-figure">
+								<div id="containerLastOrders"></div>
+								<p class="highcharts-description">
+									Here is the chart of sales per day.
+								</p>
+							</figure>
+						</div>
+					</div>
 				<div class="dashboard_content_main">
 					<div class="col50">
 						<figure class="highcharts-figure">
@@ -56,6 +122,55 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+	function visualize(){
+		Highcharts.chart('containerLastOrders',{
+			chart: {
+				type: 'spline'
+			},
+			title: {
+				text: 'Sales'
+			},
+			xAxis: {
+				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				accessibility: {
+					description: 'Months of the Year'
+				}
+			},
+			yAxis: {
+				title: {
+					text: 'Sales Amount'
+				},
+				labels: {
+					format: 'P{value}'
+				}
+			},
+			tooltip: {
+				crosshairs: true, 
+				shared: true
+			},
+			plotOptions: {
+				spline: {
+					marker: {
+						radius: 4, 
+						lineColor: '#666666',
+						lineWidth: 1
+					}
+				}
+			},
+			series: [{
+				name: 'Daily Sales',
+				marker: {
+					symbol: 'square'
+				},
+				data: [5.2, 5.7, 8.7, 13.9, 18.2, 21.4, 25.0, 22.8, 17.5, 12.1, 7.6]
+			}]
+		});
+	}
+
+	visualize();
+</script>
 
 <script>
 	var graphData = <?= json_encode($results) ?>;

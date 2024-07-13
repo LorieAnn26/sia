@@ -25,9 +25,9 @@
 				<div class="dashboard_content_main">
                 <div class="row">
                             <div class="column column-7">                                
-                                <div class="searchInputContainer">
+                                <!--<div class="searchInputContainer">
                                     <input type="text" placeholder="Search Product...">
-                                </div> 
+                                </div> -->
                                 <div class="searchResultContainer">
                                     <div class="row">
                                     <?php foreach($products as $product){ ?>
