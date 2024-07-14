@@ -1269,7 +1269,7 @@ span.item_total--label{
 	border-radius: 5px;
 	background: #fff;
 	margin: 3px;
-	width: 403px;
+	width: 400px;
 }
 
 .widgetHeader{
@@ -1319,4 +1319,8 @@ div.col-md-8{
     color: #333333;
     font-weight: bold;
     fill: #333333;
+}
+
+.selectRange{
+	font-size: 12px;
 }

@@ -86,6 +86,11 @@
 						</div>
 						<div class="col-md-8 widgetSecond">
 							<p class="header">Daily Sales</p>
+							<div class="alignRight">
+								<button class="btn btn-sm btn-default" id="daterange">
+									<p class="selectRange">Select Range</p>
+								</button>
+							</div>
 							<figure class="highcharts-figure">
 								<div id="containerLastOrders"></div>
 								<p class="highcharts-description">
@@ -123,7 +128,14 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 <script>
+	function toDateRange(){
+		$('#daterange').daterangepicker();
+	}
 	function visualize(){
 		Highcharts.chart('containerLastOrders',{
 			chart: {
@@ -170,6 +182,7 @@
 	}
 
 	visualize();
+	toDateRange();
 </script>
 
 <script>
