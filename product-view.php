@@ -137,12 +137,12 @@
 
 		this.registerEvents = function(){
 			document.addEventListener('click', function(e){
-				targetElement = e.target; // Target element
+				targetElement = e.target;
 				classList = targetElement.classList;
 
 
 				if(classList.contains('deleteProduct')){
-					e.preventDefault(); // this prevents the default mechanism.
+					e.preventDefault(); 
 
 					pId = targetElement.dataset.pid;
 					pName = targetElement.dataset.name;
