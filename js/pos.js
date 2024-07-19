@@ -264,7 +264,7 @@ let pos_script = function(){
             }
 
         });
-
+        
         document.addEventListener('input', function(e) {
             let targetEl = e.target;
         
@@ -441,3 +441,4 @@ let pos_script = function(){
 
 let loadScript = new pos_script;
 loadScript.initialize();
+

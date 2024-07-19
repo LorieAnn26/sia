@@ -100,13 +100,13 @@
 					<?php
 						$counter = 1;
 						foreach($items as $item){
-					?>					
+					?>		
 					<tr>
 						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;"><?= $counter ?></td>
 						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;"><?= $item['product'] ?></td>
 						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;"><?= number_format($item['quantity']) ?></td>
-						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;">$ <?= number_format($item['unit_price'], 2, '.' , ',') ?></td>
-						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;">$ <?= number_format($item['sub_total'], 2, '.' , ',') ?></td>
+						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;">₱ <?= number_format($item['unit_price'], 2, '.' , ',') ?></td>
+						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 13px;text-align: center;">₱ <?= number_format($item['sub_total'], 2, '.' , ',') ?></td>
 					</tr>
 					<?php $counter++; } ?>
 					<tr>
@@ -117,7 +117,7 @@
 						<td></td>
 						<td></td>
 						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold; background: #ededed;">TOTAL</td>
-						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold;">$ <?= number_format($sale['total_amount'], 2, '.', ',') ?></td>
+						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold;">₱ <?= number_format($sale['total_amount'], 2, '.', ',') ?></td>
 					</tr>
 			
 					<tr>
@@ -125,14 +125,14 @@
 						<td></td>
 						<td></td>
 						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold; text-transform: uppercase; background: #ededed;"> Tendered </td>
-						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold; text-transform: uppercase;">$ <?= number_format($sale['amount_tendered'], 2, '.', ',') ?></td>
+						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold; text-transform: uppercase;">₱ <?= number_format($sale['amount_tendered'], 2, '.', ',') ?></td>
 					</tr>
 					<tr>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold; background: #ededed;">CHANGE </td>
-						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold;">$ <?= number_format($sale['change_amt'], 2, '.', ',') ?></td>
+						<td style="border: 1px solid #bbbbbb; border-collapse: collapse;font-size: 14px;text-align: center;font-weight: bold;">₱ <?= number_format($sale['change_amt'], 2, '.', ',') ?></td>
 					</tr>
 				</tbody>
 			</table>

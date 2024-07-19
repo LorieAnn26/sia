@@ -53,7 +53,7 @@
 <head>
 	<title>LPG Login</title>
 
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet"  href="login.css">
 </head>
 <body id="loginBody">
 	<?php if(!empty($error_message)) { ?>

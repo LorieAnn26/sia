@@ -21,11 +21,6 @@
 			<p class="bannerTagline">
 				Track your LPG Tanks throughout your entire supply chain, from purchasing to production to end sales
 			</p>
-			<!--<div class="bannerIcons">
-				<a href=""><i class="fa fa-apple"></i></a>
-				<a href=""><i class="fa fa-android"></i></a>
-				<a href=""><i class="fa fa-windows"></i></a>
-			</div>-->
 		</div>
 	</div>	
 	<div class="homepageContainer">
@@ -33,21 +28,21 @@
 			<div class="homepageFeature">	
 				<span class="featureIcon"><i class="fa fa-gear"></i></span>		
 				<h3 class="featureTitle">About Solane</h3>	
-				<p class="featureDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.</p>
+				<p class="featureDescription">Solane is a premium brand that provides high-quality liquefied petroleum gas (LPG) for residential, commercial, and industrial use in the Philippines.</p>
 			</div>			
 			<div class="homepageFeature">	
 				<span class="featureIcon"><i class="fa fa-star"></i></span>		
 				<h3 class="featureTitle">Why LPG</h3>	
-				<p class="featureDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.</p>
+				<p class="featureDescription">LPG, or liquefied petroleum gas, is widely used because it is a clean, efficient, and versatile energy source that offers lower greenhouse gas emissions compared to other fossil fuels, making it ideal for cooking, heating, and industrial processes.</p>
 			</div>	
 			<div class="homepageFeature">	
 				<span class="featureIcon"><i class="fa fa-globe"></i></span>	
 				<h3 class="featureTitle">Order Now</h3>	
-				<p class="featureDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.</p>
+				<p class="featureDescription">To place an order for Solane LPG, you can visit their official website, use their mobile app, or call their customer service hotline to arrange for delivery.</p>
 			</div>	
 		</div>
 	</div>
-	<!--<div class="homepageNotified">
+	<!-- <div class="homepageNotified">
 		<div class="homepageContainer">			
 			<div class="homepageNotifiedContainer">				
 				<div class="emailForm">
@@ -65,30 +60,26 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="socials">
 		<div class="homepageContainer">
 			<h3 class="socialHeader">Say Hi & Get in Touch</h3>
-			<p class="socialText">Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendisse. </p>
+			<p class="socialText">Hi there! If you'd like to get in touch with us for any inquiries or to place an order, feel free to visit our website, use our mobile app, or call our customer service hotline. We're here to help! </p>
 			<div class="socialIconsContainer">
-				<a href=""><i class="fa fa-twitter"></i></a>
-				<a href=""><i class="fa fa-facebook"></i></a>
-				<a href=""><i class="fa fa-pinterest"></i></a>
-				<a href=""><i class="fa fa-google-plus"></i></a>
-				<a href=""><i class="fa fa-linkedin"></i></a>
-				<a href=""><i class="fa fa-youtube"></i></a>
+				<a href="https://www.facebook.com/solane.ph"><i class="fa fa-facebook"></i></a>
+				<a href="https://www.instagram.com/solanelpg.ph"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.youtube.com/@OfficialSolaneTV"><i class="fa fa-youtube"></i></a>
 			</div>
 		</div>
-	</div>
+	</div> 
 	<div class="footer">
-		<div class="homepageContainer">
-			<a href="">Contact</a>
-			<a href="">Download</a>
-			<a href="">Press</a>
-			<a href="">Email</a>
-			<a href="">Support</a>
-			<a href="">Privacy Policy</a>
-		</div>-->
-	</div>
+    <div class="homepageContainer">
+        <a href="#">Address: 28/F Zuellig Building, Makati Avenue corner Paseo de Roxas Avenue, Salcedo Village, Makati City, Philippines</a>
+        <a href="#">Email: solane@islagrp.com</a>
+        <a href="#">Contact Number: (Metro Manila) +63 2 8887-5555; 7777-5555<br>(Nationwide, SMS only) +63 917 897 7555 (Globe); +63 918 887 5555 (Smart)</a>
+    </div>
+</div>
+
+
 </body>
 </html>

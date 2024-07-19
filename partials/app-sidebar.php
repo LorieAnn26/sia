@@ -1,6 +1,7 @@
 <?php
 	$user = $_SESSION['user'];
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="dashboard_sidebar" id="dashboard_sidebar">
 	<h3 class="dashboard_logo" id="dashboard_logo">LPG</h3>
@@ -15,7 +16,7 @@
 				<a href="./dashboard.php" ><i class="fa fa-dashboard"></i> <span class="menuText">Dashboard</span></a>
 			</li>			
 			<li class="liMainMenu">
-				<a href="pos.php" ><i class="fa fa-dollar sign"></i> <span class="menuText">Point of Sale</span></a>
+				<a href="pos.php" ><i class="fa fa-peso-sign"></i> <span class="menuText">Point of Sale</span></a>
 			</li>			
 			<li class="liMainMenu">
 				<a href="javascript:void(0);" class="showHideSubMenu" >

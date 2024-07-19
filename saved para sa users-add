@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 	// Start the session.
 	session_start();
 	if(!isset($_SESSION['user'])) header('location: login.php');
@@ -26,22 +26,22 @@
 						<div class="column column-12">
 							<h1 class="section_header"><i class="fa fa-plus"></i> Create User</h1>
 							<div id="userAddFormContainer">						
-							<form action="database/add.php" method="POST" class="appForm">
+								<form action="database/add.php" method="POST" class="appForm">
 									<div class="appFormInputContainer">
 										<label for="first_name">First Name</label>
-										<input type="text" class="appFormInput capitalize" id="first_name" name="first_name" />    
+										<input type="text" class="appFormInput" id="first_name" name="first_name" />	
 									</div>
 									<div class="appFormInputContainer">
 										<label for="last_name">Last Name</label>
-										<input type="text" class="appFormInput capitalize" id="last_name" name="last_name" />    
+										<input type="text" class="appFormInput" id="last_name" name="last_name" />	
 									</div>
 									<div class="appFormInputContainer">
 										<label for="email">Email</label>
-										<input type="text" class="appFormInput" id="email" name="email" />    
+										<input type="text" class="appFormInput" id="email" name="email" />	
 									</div>
 									<div class="appFormInputContainer">
 										<label for="password">Password</label>
-										<input type="password" class="appFormInput" id="password" name="password" />    
+										<input type="password" class="appFormInput" id="password" name="password" />	
 									</div>
 									<input type="hidden" id="permission_el" name="permissions" >
 									<!-- 
@@ -114,4 +114,4 @@
 	script.initialize();
 </script>
 </body>
-</html>
+</html> -->

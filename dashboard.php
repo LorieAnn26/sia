@@ -29,7 +29,7 @@
 <html>
 <head>
 	<title>Dashboard - Inventory Management System</title>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="login.css">
 	<script src="https://use.fontawesome.com/0c7a3095b5.js"></script>
 </head>
 <body>
