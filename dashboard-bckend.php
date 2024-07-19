@@ -2,6 +2,10 @@
     include('database/connection.php');
     include('sale.php');
 
+    if(isset($_GET['action'])){
+        if($_GET['action'] == 'getGraphData') echo getChartData($_GET['start'], $_GET['end']);
+    }
+
     function getChartData($start, $end){
 
         $date_amt = [];
@@ -25,7 +29,7 @@
         return $sales;
     }
 
-    function getSalesWidgetData(){
+    function getSaleWidgetData(){
         $today = date('Y-m-d');
         $sales = getSales($today, $today);
 

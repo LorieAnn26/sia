@@ -1,8 +1,10 @@
 <?php
 	include('dashboard-bckend.php');
-	$widget_data = getSalesWidgetData();
+	$widget_data = getSaleWidgetData();
 	$recent_orders = getRecentOrders();
-	$graph_data = getChartData('2024-07-13', '2024-07-18');
+	$end = date('Y-m-d');
+	$start = date('Y-m-d', strtotime($end . '-7 days'));
+	$graph_data = getChartData($start, $end);
 
 ?>
 
@@ -83,11 +85,6 @@
 						</div>
 						<div class="col-md-8 widgetSecond">
 							<p class="header">Daily Sales</p>
-							<div class="alignRight">
-								<button class="btn btn-sm btn-default" id="daterange">
-									<p class="selectRange">Select Range</p>
-								</button>
-							</div>
 							<figure class="highcharts-figure">
 								<div id="containerLastOrders"></div>
 								<p class="highcharts-description">
@@ -130,12 +127,21 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
 <script>
-	function toDateRange(){
-		$('#daterange').daterangepicker();
-	}
-	function visualize(){
-		Let graphData = <?= $graph_data ?>;
-		console.log(graphData)
+	/*function toDateRange(){
+		$('#daterange').daterangepicker({
+			maxDate: moment(),
+		}, function(start, end, label){
+			let startF = start.format('YYYY-MM-DD');
+			let endF = end.format('YYYY-MM-DD');
+
+			$('#daterange').html(moment(start).format('LL') + ' - ' + moment(end).format('LL'));
+
+			$.get('dashboard-bckend.php?action=getChartData&start'+startF+'&end='+endF,function(response){
+				visualize(response);
+			},'json');
+		});
+	}*/
+	function visualize(graphData){
 
 		Highcharts.chart('containerLastOrders',{
 			chart: {
@@ -145,7 +151,7 @@
 				text: 'Sales'
 			},
 			xAxis: {
-				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				categories: graphData['categories'],
 				accessibility: {
 					description: 'Months of the Year'
 				}
@@ -176,12 +182,12 @@
 				marker: {
 					symbol: 'square'
 				},
-				data: [5.2, 5.7, 8.7, 13.9, 18.2, 21.4, 25.0, 22.8, 17.5, 12.1, 7.6]
+				data: graphData['series']
 			}]
 		});
 	}
 
-	visualize();
+	visualize(<?= $graph_data ?>);
 	toDateRange();
 </script>
 
