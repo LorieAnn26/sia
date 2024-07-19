@@ -108,6 +108,7 @@ function saveProducts(){
 
         echo json_encode([
             'success' => true,
+            'id' => $sales_id,
             'message' => 'Order successfully checkout!',
             'products' => getProducts()
     ]);

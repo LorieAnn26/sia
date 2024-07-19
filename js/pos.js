@@ -70,26 +70,32 @@ let pos_script = function(){
                     title: 'Add to Order',
                     type: BootstrapDialog.TYPE_DEFAULT,
                     message: dialogForm,
-                    callback: function(addOrder){
-                        if(addOrder){
+                    callback: function(addOrder) {
+                        if(addOrder) {
                             let orderQty = parseInt(document.getElementById('orderQty').value);
-
-                            if(isNaN(orderQty)){
-                                
+                            
+                            if(isNaN(orderQty)) {
                                 loadScript.dialogError('Please type order quantity.');
-                        
+                                return; 
                             }
-
-                            if(orderQty > curStock){
-
-                                loadScript.dialogError('Quantity is higher than current stock. <strong>('+ curStock +')</strong>');
-                                
+                
+                            if (curStock <= 0) {
+                                loadScript.dialogError('Current stock is 0 or negative. Cannot proceed.');
+                                return;
                             }
-
+                            
+                            if(orderQty > curStock) {
+                                loadScript.dialogError('Quantity is higher than current stock. <strong>(' + curStock + ')</strong>');
+                                return; 
+                            }
+                            
+                           
                             loadScript.addToOrder(productInfo, pid, orderQty);
                         }
                     }
                 });
+                
+                
 
             }
 
@@ -244,6 +250,7 @@ let pos_script = function(){
                                                 callback: function(isOk){
                                                     if(response.success == true){
                                                         loadScript.resetData(response);
+                                                        window.open('/CIA-1-LPG/receipt.php?receipt_id=' + response.id, '_blank');
                                                     }
                                                 }
                                             });
@@ -258,24 +265,28 @@ let pos_script = function(){
 
         });
 
-            document.addEventListener('keyup', function(e){
-                let targetEl = e.target;
-                let targetElClassList = targetEl.classList;
-
-                if(targetEl.id === 'userAmt'){
-                    let userAmt =  targetEl.value == '' ? 0 : parseFloat(targetEl.value);
-                    loadScript.tenderedAmt = userAmt;
-                    let change = userAmt - loadScript.totalOrderAmount;
-                    loadScript.userChange = change;
-
-                    document.querySelector('.checkoutUserChange .changeAmt')
-                        .innerHTML = loadScript.addCommas(change.toFixed(2));
-                    let el = document.querySelector('.checkoutUserChange');
-                        if(change < 0)el.classList.add('text-danger');
-                        else el.classList.remove('text-danger');
-                }
-
-            })
+        document.addEventListener('input', function(e) {
+            let targetEl = e.target;
+        
+            if (targetEl.id === 'userAmt') {
+               
+                targetEl.value = targetEl.value.replace(/[^0-9.]/g, '');
+                
+               
+                let userAmt = targetEl.value == '' ? 0 : parseFloat(targetEl.value);
+                loadScript.tenderedAmt = userAmt;
+                let change = userAmt - loadScript.totalOrderAmount;
+                loadScript.userChange = change;
+        
+                
+                document.querySelector('.checkoutUserChange .changeAmt')
+                    .innerHTML = loadScript.addCommas(change.toFixed(2));
+                let el = document.querySelector('.checkoutUserChange');
+                if (change < 0) el.classList.add('text-danger');
+                else el.classList.remove('text-danger');
+            }
+        });
+        
     }
 
     this.resetData = function(response){
@@ -345,7 +356,7 @@ let pos_script = function(){
                         </td>
                         <td>P${ loadScript.addCommas(orderItems['amount'].toFixed(2)) }</td>
                         <td>
-                            <a href="javascript:void(0)"><i class="fa fa-edit"></i></a>
+                            
                             <a href="javascript:void(0)" class="deleteOrderItem" data-id="${pid}">
                                 <i class="fa fa-trash deleteOrderItem" data-id="${pid}"></i>
                             </a>

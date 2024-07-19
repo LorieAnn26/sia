@@ -230,9 +230,6 @@
 					supplierOption += "<option "+ selected +" value='"+ supId +"'>"+ supName +"</option>";
 				}
 
-
-
-
 				BootstrapDialog.confirm({
 					title: 'Update <strong>' + productDetails.product_name + '</strong>',
 					message: '<form action="database/add.php" method="POST" enctype="multipart/form-data" id="editProductForm">\
@@ -250,6 +247,10 @@
 						<div class="appFormInputContainer">\
 							<label for="description">Description</label>\
 							<textarea class="appFormInput productTextAreaInput" placeholder="Enter product description..." id="description" name="description"> '+ productDetails.description +'</textarea>	\
+						</div>\
+						<div class="appFormInputContainer">\
+							<label for="stock">Stock</label>\
+							<input type="text" class="appFormInput" id="stock" value="'+ productDetails.stock +'"  placeholder="Enter stock..." name="stock" />\
 						</div>\
 						<div class="appFormInputContainer">\
 							<label for="product_name">Product Image</label>\

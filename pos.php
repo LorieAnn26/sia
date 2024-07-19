@@ -52,9 +52,6 @@
                             </div>
                             <div class="column column-5 posOrderContainer">
                                 <div class="pos_header">
-                                    <div class="setting alignRight">
-                                        <a href="javascript:void(0)"><i class="fa fa-gear"> </i></a>
-                                    </div>
                                     <p class="logo">LPG</p>
                                     <p class="timeAndDate">XXX XX, XXXX    XX:XX:XX XX</p>
                                 </div>

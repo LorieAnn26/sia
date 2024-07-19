@@ -21,33 +21,33 @@
 			<p class="bannerTagline">
 				Track your LPG Tanks throughout your entire supply chain, from purchasing to production to end sales
 			</p>
-			<div class="bannerIcons">
+			<!--<div class="bannerIcons">
 				<a href=""><i class="fa fa-apple"></i></a>
 				<a href=""><i class="fa fa-android"></i></a>
 				<a href=""><i class="fa fa-windows"></i></a>
-			</div>
+			</div>-->
 		</div>
 	</div>	
 	<div class="homepageContainer">
 		<div class="homepageFeatures">
 			<div class="homepageFeature">	
 				<span class="featureIcon"><i class="fa fa-gear"></i></span>		
-				<h3 class="featureTitle">Editable Theme</h3>	
+				<h3 class="featureTitle">About Solane</h3>	
 				<p class="featureDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.</p>
 			</div>			
 			<div class="homepageFeature">	
 				<span class="featureIcon"><i class="fa fa-star"></i></span>		
-				<h3 class="featureTitle">Flat Design</h3>	
+				<h3 class="featureTitle">Why LPG</h3>	
 				<p class="featureDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.</p>
 			</div>	
 			<div class="homepageFeature">	
 				<span class="featureIcon"><i class="fa fa-globe"></i></span>	
-				<h3 class="featureTitle">Reach Your Audience</h3>	
+				<h3 class="featureTitle">Order Now</h3>	
 				<p class="featureDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla fringilla.</p>
 			</div>	
 		</div>
 	</div>
-	<div class="homepageNotified">
+	<!--<div class="homepageNotified">
 		<div class="homepageContainer">			
 			<div class="homepageNotifiedContainer">				
 				<div class="emailForm">
@@ -88,7 +88,7 @@
 			<a href="">Email</a>
 			<a href="">Support</a>
 			<a href="">Privacy Policy</a>
-		</div>
+		</div>-->
 	</div>
 </body>
 </html>

@@ -1,4 +1,12 @@
 <?php
+	include('dashboard-bckend.php');
+	$widget_data = getSalesWidgetData();
+	$recent_orders = getRecentOrders();
+	$graph_data = getChartData('2024-07-13', '2024-07-18');
+
+?>
+
+<?php
 	// Start the session.
 	session_start();
 	if(!isset($_SESSION['user'])) header('location: login.php');
@@ -31,58 +39,47 @@
 					<div class ="row widgetMainRow">
 						<div class ="col-4">
 							<div class ="widgetContainer widgetSale">
-								<p class ="widgetValue"> $32,000.00 </p>
+								<p class ="widgetValue">P<?= number_format($widget_data['sale_amt'],2) ?> </p>
 								<p class ="widgetHeader"> Sale Amount </p>
                             </div>
 						</div> 
                        <div class ="col-4">
 					  		<div class ="widgetContainer widgetQtySold">
-								<p class ="widgetValue"> 473 </p>
+								<p class ="widgetValue"> <?= number_format($widget_data['qty']) ?> </p>
 								<p class ="widgetHeader"> Tanks Sold </p>
                             </div>						
 						</div> 
 						<div class ="col-4">
 							<div class ="widgetContainer widgetOrder">
-								<p class ="widgetValue"> 85 </p>
+								<p class ="widgetValue"> <?= number_format($widget_data['orders']) ?> </p>
 								<p class ="widgetHeader"> Total Orders </p>
                             </div>						
 						</div> 
 					</div>
 					<div class ="row widgetSubRow">
 						<div class="col-md-4 widgetSecond">
-							<p class="header">Last 5 Orders</p>
-							<table class="table">
+							<p class="header">Last 10 Orders</p>
+							<?php 
+							if(count($recent_orders)){?>
+								<table class="table">
 								<tr>
 									<th>Order #</th>
 									<th>Total Amount</th>
 									<th>Date</th>
 								</tr>
+							<?php
+								foreach($recent_orders as $order){ 
+							?>
 								<tr>
-									<td>54</td>
-									<td>P8,454.00</td>
-									<td>July 13, 2024 10:22 PM</td>
+									<td><?= $order['id'] ?></td>
+									<td>P<?= number_format($order['total_amount'],2) ?></td>
+									<td><?= date('F d/y h:i:s A', strtotime($order['date_created'])) ?></td>
 								</tr>
-								<tr>
-									<td>71</td>
-									<td>P456.00</td>
-									<td>July 13, 2024 10:22 PM</td>
-								</tr>
-								<tr>
-									<td>13</td>
-									<td>P6,686.00</td>
-									<td>July 13, 2024 10:22 PM</td>
-								</tr>
-								<tr>
-									<td>67</td>
-									<td>P535.00</td>
-									<td>July 13, 2024 10:22 PM</td>
-								</tr>
-								<tr>
-									<td>81</td>
-									<td>P4,293.00</td>
-									<td>July 13, 2024 10:22 PM</td>
-								</tr>
+							<?php } ?>
 							</table>
+							<?php } else { ?>
+								<p class="nodatafound_small">No data.</p>
+							<?php }	?>
 						</div>
 						<div class="col-md-8 widgetSecond">
 							<p class="header">Daily Sales</p>
@@ -137,6 +134,9 @@
 		$('#daterange').daterangepicker();
 	}
 	function visualize(){
+		Let graphData = <?= $graph_data ?>;
+		console.log(graphData)
+
 		Highcharts.chart('containerLastOrders',{
 			chart: {
 				type: 'spline'

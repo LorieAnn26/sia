@@ -2,6 +2,7 @@
 
 $product_name = $_POST['product_name'];
 $description = $_POST['description'];
+$stock = $_POST['stock'];
 $pid = $_POST['pid'];
 
 // Upload or move the file to our directory
@@ -30,52 +31,71 @@ if($file_data['tmp_name'] !== ''){
 
 
 
+
 // Update the product record
 try {
-	$sql = "UPDATE products 
-				SET 
-				product_name=?,  description=?, img=?
-				WHERE id=?";
+    
+    if (empty($file_name_value)) {
+        $sql = "SELECT img FROM products WHERE id=?";
+        include('connection.php');
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$pid]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $file_name_value = $result['img'];
+    }
 
-	include('connection.php');
-	$stmt = $conn->prepare($sql);
-	$stmt->execute([$product_name, $description, $file_name_value, $pid]);
+    $sql = "UPDATE products 
+            SET 
+            product_name=?, description=?, stock=?, img=? 
+            WHERE id=?";
 
-	// Delete the old values.
-	$sql = "DELETE FROM productsuppliers WHERE product=?";
-	$stmt = $conn->prepare($sql);
-	$stmt->execute([$pid]);
+    include('connection.php');
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$product_name, $description, $stock, $file_name_value, $pid]);
 
-	// Loop through the suppliers and add record
-	// Get suppliers.
-	$suppliers = isset($_POST['suppliers']) ? $_POST['suppliers'] : [];
-	foreach($suppliers as $supplier){
-		$supplier_data = [
-			'supplier_id' => $supplier,
-			'product_id' => $pid,
-			'updated_at' => date('Y-m-d H:i:s'),
-			'created_at' => date('Y-m-d H:i:s')
-		];
+    if (!isset($_POST['suppliers']) || empty($_POST['suppliers'])) {
+        $sql = "SELECT supplier FROM productsuppliers WHERE product=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$pid]);
+        $suppliers = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    } else {
+        $suppliers = $_POST['suppliers'];
+    }
 
+   
+    $sql = "DELETE FROM productsuppliers WHERE product=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$pid]);
 
-		$sql = "INSERT INTO productsuppliers			
-					(supplier, product, updated_at, created_at) 
-				VALUES 
-					(:supplier_id, :product_id, :updated_at, :created_at)";
-		$stmt = $conn->prepare($sql);
-		$stmt->execute($supplier_data);
-	}
-	$response = [
-		'success' => true,
-		'message' => "<strong>$product_name</strong> Successfully updated to the system."
-	];
-	
+    
+    foreach ($suppliers as $supplier) {
+        $supplier_data = [
+            'supplier_id' => $supplier,
+            'product_id' => $pid,
+            'updated_at' => date('Y-m-d H:i:s'),
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+
+        $sql = "INSERT INTO productsuppliers            
+                (supplier, product, updated_at, created_at) 
+                VALUES 
+                (:supplier_id, :product_id, :updated_at, :created_at)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($supplier_data);
+    }
+
+    $response = [
+        'success' => true,
+        'message' => "<strong>$product_name</strong> Successfully updated to the system."
+    ];
 } catch (\Exception $e) {
-	$response = [
-		'success' => false,
-		'message' => "Error processing your request"
-	];
+    $response = [
+        'success' => false,
+        'message' => "Error processing your request"
+    ];
 }
+
+
 
 
 echo json_encode($response);

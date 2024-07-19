@@ -49,8 +49,8 @@
 				</a>
 
 				<ul class="subMenus">
-					<li><a class="subMenuLink" href="./product-order.php"> <i class="fa fa-circle-o"></i> Create Order</a></li>
 					<li><a class="subMenuLink" href="./view-order.php"> <i class="fa fa-circle-o"></i> View Orders</a></li>
+					<li><a class="subMenuLink" href="./product-order.php"> <i class="fa fa-circle-o"></i> Create Order</a></li>
 				</ul>
 			</li>
 
@@ -71,7 +71,7 @@
 				</ul>
 			</li>
 
-			<li class="liMainMenu showHideSubMenu" >
+			<!--<li class="liMainMenu showHideSubMenu" >
 				<a href="javascript:void(0);" class="showHideSubMenu" >
 					<i class="fa fa-calendar showHideSubMenu"></i> 
 					<span class="menuText showHideSubMenu" >Schedule</span>
@@ -81,7 +81,7 @@
 				<ul class="subMenus">
 					<li><a class="subMenuLink" href="./schedule-add.php"> <i class="fa fa-circle-o"></i> Add</a></li>
 					<li><a class="subMenuLink" href="./requests-view.php"> <i class="fa fa-circle-o"></i> View</a></li>
-				</ul>
+				</ul>-->
 			</li>
 		</ul>
 	</div>

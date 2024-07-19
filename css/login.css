@@ -1320,3 +1320,8 @@ div.col-md-8{
     font-weight: bold;
     fill: #333333;
 }
+
+.nodatafound_small{
+	font-size: 15px;
+	color: #2a70ad;
+}

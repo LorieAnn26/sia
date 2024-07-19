@@ -1,6 +1,6 @@
 <script src="js/jquery/jquery-3.5.1.min.js"></script>
 <div class="dashboard_topNav">
-	<a href="" id="toggleBtn"><i class="fa fa-navicon"></i></a>
+	<a href="" id="toggleBtn"><!--<i class="fa fa-navicon">--></i></a>
 	<div id="topNavContainer">
 		<div id="searchResultsContainer">				
 			<input type="text" id="searchInput" placeholder="Enter search term...">
