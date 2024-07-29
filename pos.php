@@ -22,6 +22,9 @@
 		<div class="dasboard_content_container" id="dasboard_content_container">
 			<?php include('partials/app-topnav.php') ?>
 			<div class="dashboard_content">
+                <div class="posCartBtnContainer">
+                    <a href="javascript:void(0)" class="fa fa-shopping-cart posCartBtn"></a>
+                </div>
 				<div class="dashboard_content_main">
                 <div class="row">
                             <div class="column column-7">                                
@@ -69,7 +72,7 @@
                                 <div class="checkoutBtnContainer">
                                     <a href="javascript:void(0)" class="checkoutBtn">CHECKOUT</a>
                                 </div>
-                    </div>
+                                                        </div>
                 </div>
 			</div>
 		</div>

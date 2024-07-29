@@ -37,11 +37,13 @@
 									</div>
 									<div class="appFormInputContainer">
 										<label for="email">Email</label>
-										<input type="text" class="appFormInput" id="email" name="email" />    
+										<input type="text" class="appFormInput" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@ims\.com$" />    
+										<span class="error" id="emailError">Please enter a valid email ending with @ims.com</span>
 									</div>
 									<div class="appFormInputContainer">
 										<label for="password">Password</label>
-										<input type="password" class="appFormInput" id="password" name="password" />    
+										<input type="password" class="appFormInput" id="password" name="password" required minlength="8" maxlength="20" />
+										<span class="error" id="passwordError">Password must be between 8 and 20 characters long</span>
 									</div>
 									<input type="hidden" id="permission_el" name="permissions" >
 									<!-- 
@@ -71,7 +73,7 @@
 	</div>
 	<?php include('partials/app-scripts.php'); ?>
 
-<script>
+<Script>
 	function loadScript(){
      	this.permissions = [];
 
@@ -113,5 +115,39 @@
 	var script = new loadScript;
 	script.initialize();
 </script>
+<script>
+		document.getElementById('email').addEventListener('input', function () {
+            const emailInput = this;
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@ims\.com$/;
+
+            if (emailPattern.test(emailInput.value)) {
+                emailError.style.display = 'none';
+                emailInput.setCustomValidity('');
+            } else {
+                emailError.style.display = 'block';
+                emailInput.setCustomValidity('Please enter a valid email ending with @ims.com');
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function () {
+            const passwordInput = this;
+            const passwordError = document.getElementById('passwordError');
+
+            if (passwordInput.value.length >= 8 && passwordInput.value.length <= 20) {
+                passwordError.style.display = 'none';
+                passwordInput.setCustomValidity('');
+            } else {
+                passwordError.style.display = 'block';
+                passwordInput.setCustomValidity('Password must be between 8 and 20 characters long');
+            }
+        });
+
+        
+        window.onload = initializeForm;
+var script = new loadScript;
+script.initialize();
+	</script>
+
 </body>
 </html>
